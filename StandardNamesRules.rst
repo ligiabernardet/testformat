@@ -231,12 +231,15 @@ Suffixes
 | **of_new_state OR updated_by_physics**
 | **on_physics_timestep**
 | **on_dynamics_timestep**
+
 | **on_radiation_timestep**
 | **on_previous_timestep**
 | **N_timesteps_back**
 | test
 | `test`
 | ``test``
+| 'test'
+| "test"
 
 Computational
 -------------
