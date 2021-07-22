@@ -278,8 +278,7 @@ Prefixes and Suffixes
 | **for_current_cubed_sphere_tile**
 | **plus_one**
 | **minus_one**
-| **one_way_coupling_of_** ``X`` **
-_to_Y**
+| **one_way_coupling_of_** ``X`` **_to_Y**
 | **for_radiation**
 | **for_deep_convection**
 | **for_microphysics**
