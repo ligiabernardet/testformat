@@ -36,13 +36,13 @@ CCPP Standard Name Rules
    assuming_clear_sky). The order defined by the CF rules should be observed. These
    qualifications do not change the units of the quantity.
 
-   All of the following phrases in brackets are optional. The words in ``this font``
-   appear explicitly as stated, while the words in *italic* indicate other
+   All of the following phrases in brackets are optional. The words in *italic*
+   appear explicitly as stated, while the words in ``this font`` indicate other
    words or phrases to be substituted. The new standard name is constructed by
    joining the base standard name to the qualifiers using underscores.
 
-   [*surface*] [*component*] standard_name [``at`` *surface*] [``in`` *medium*]
-   [``due_to`` *process*] [``assuming`` *condition*]
+   [``surface``] [``component``] standard_name [*at* ``surface``] [*in* ``medium``]
+   [*due_to* ``process``] [*assuming* ``condition``]
 
    See the list of currently-used :ref:`qualifications <qualifiers>` for help.
 
@@ -83,6 +83,8 @@ Qualifiers
 black = existing CF qualifier
 
 **bold** = **proposed new qualifier**
+
+``this font`` = words or phrases to be substituted
 
 XY-surface
 ----------
