@@ -113,7 +113,7 @@ Suffixes
 | at_top_of_atmosphere_model
 | at_top_of_dry_convection
 | **at_interface**
-| **at_surface_adjacent_layer OR at_bottom_layer OR at_lowest_model_layer**
+| **at_surface_adjacent_layer**
 | **at_2m**
 | **at_10m**
 | **at_bottom_interface**
@@ -230,19 +230,13 @@ Time
 Suffixes
 ^^^^^^^^
 
-| **of_new_state OR updated_by_physics**
+| **of_new_state**
 | **on_physics_timestep**
 | **on_dynamics_timestep**
 
 | **on_radiation_timestep**
 | **on_previous_timestep**
 | ``N`` **_timesteps_back**
-| **word** ``N`` **word**
-| test
-| `test`
-| ``test``
-| 'test'
-| "test"
 
 Computational
 -------------
@@ -250,7 +244,6 @@ Computational
 Prefixes and Suffixes
 ^^^^^^^^^^^^^^^^^^^^^
 
-| **real**
 | **for_coupling**
 | **for_chemistry_coupling**
 | **from_coupled_process**
@@ -274,19 +267,19 @@ Prefixes and Suffixes
 | **frequency_of**
 | **period_of**
 | **XYZ_dimensioned**
-| **tendency_of_X**
+| **tendency_of_** ``X``
 | **generic_tendency**
 | **for_current_mpi_rank**
 | **for_current_cubed_sphere_tile**
 | **plus_one**
 | **minus_one**
-| **one_way_coupling_of_** ``X`` **_to_Y**
+| **one_way_coupling_of_** ``X`` **_to_** ``Y``
 | **for_radiation**
 | **for_deep_convection**
 | **for_microphysics**
 | **directory_for_** ``X`` **_source_code**
 | **flag_for_reading_** ``X`` **_from_input**
-| **tunable_parameters[s]_for_** ``X``
+| **tunable_parameter[s]_for_** ``X``
 | **map_of**
 
 Transformations
@@ -294,30 +287,30 @@ Transformations
 
 Prefixes
 ^^^^^^^^
-| change_over_time_in_X
-| [horizontal_]convergence_of_X
-| correlation_of_X_and_Y[_over_Z]
-| covariance_of_X_and_Y[_over_Z]
-| component_derivative_of_X
-| derivative_of_X_wrt_Y
-| direction_of_X
-| [horizontal_]divergence_of_X
-| histogram_of_X[_over_Z]
-| integral_of_Y_wrt_X
-| ln_X
-| log10_X
-| magnitude_of_X
-| probability_distribution_of_X[_over_Z]
-| probability_density_function_of_X[_over_Z]
-| product_of_X_and_Y
-| ratio_of_X_to_Y
-| square_of_X
-| tendency_of_X
-| **standard_deviation_of_X**
-| **reciprocal_of_X**
-| **cosine_of_X**
-| **sine_of_X**
-| **variance_of_X**
+| change_over_time_in_ ``X``
+| [horizontal_]convergence_of_ ``X``
+| correlation_of_ ``X`` _and_``Y`` [_over_ ``Z``]
+| covariance_of_ ``X`` _and_ ``Y`` [_over_ ``Z``]
+| component_derivative_of_ ``X``
+| derivative_of_ ``X`` _wrt_ ``Y``
+| direction_of_ ``X``
+| [horizontal_]divergence_of_ ``X``
+| histogram_of_``X`` [_over_ ``Z``]
+| integral_of_ ``Y`` _wrt_ ``X``
+| ln_ ``X``
+| log10_``X``
+| magnitude_of_ ``X``
+| probability_distribution_of_ ``X`` [_over_ ``Z``]
+| probability_density_function_of_ ``X``[_over_ ``Z``]
+| product_of_`` X`` _and_ ``Y``
+| ratio_of_ ``X`` _to_`` Y``
+| square_of_ ``X``
+| tendency_of_ ``X``
+| **standard_deviation_of_** ``X``
+| **reciprocal_of_** ``X``
+| **cosine_of ``_X``
+| **sine_of_ ``X``
+| **variance_of_ ``X``
 
 Other common standard name components
 =====================================
@@ -490,8 +483,6 @@ Acronyms, Abbreviations, and Aliases
 +---------------------+---------------------------------------------------------+
 | **Short**           |  **Meaning**                                            |
 +=====================+=========================================================+
-| ir                  | infrared                                                |
-+---------------------+---------------------------------------------------------+
 | IR                  | infared                                                 |
 +---------------------+---------------------------------------------------------+
 | lwe                 | liquid water equivalent                                 |
