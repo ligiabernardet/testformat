@@ -267,7 +267,7 @@ Prefixes and Suffixes
 | **frequency_of**
 | **period_of**
 | **XYZ_dimensioned**
-| **tendency_of_** ``X``
+| **tendency_of** ``X``
 | **generic_tendency**
 | **for_current_mpi_rank**
 | **for_current_cubed_sphere_tile**
@@ -277,7 +277,7 @@ Prefixes and Suffixes
 | **for_radiation**
 | **for_deep_convection**
 | **for_microphysics**
-| **directory_for_** ``X`` **_source_code**
+| **directory for** ``X`` **_source_code**
 | **flag_for_reading_** ``X`` **_from_input**
 | **tunable_parameter[s]_for_** ``X``
 | **map_of**
