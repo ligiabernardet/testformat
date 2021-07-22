@@ -20,7 +20,7 @@ for use with the Common Community Physics Package (CCPP). It describes the
 CCPP Standard Name Rules
 ========================
 
-#. Standard names should be identical to those from the latest version
+#. Standard names should be identical to those from the la\ version
    of the `Climate and Forecast (CF) metadata
    conventions <https://cfconventions.org/standard-names.html>`_ unless
    an appropriate name does not exist in that standard.
@@ -234,7 +234,8 @@ Suffixes
 
 | **on_radiation_timestep**
 | **on_previous_timestep**
-| **``N``_timesteps_back**
+| ``N``**_timesteps_back**
+| **word**``N``**word**
 | test
 | `test`
 | ``test``
