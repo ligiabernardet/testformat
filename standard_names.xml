@@ -1,0 +1,420 @@
+<standard_names name="CCPP Standard Name Library" version="1.0">
+  <section name="dimensions"
+           comment="Dimension standard names may come in sets of six
+                    related standard names for each dimension:\n
+                    ```\n
+                    [dim_name]_dimension -- The full dimension size\n
+                    [dim_name]_loop_extent -- Size of dim for current call\n
+                    [dim_name]_begin - Start index for dimension\n
+                    [dim_name]_end - End index for dimension\n
+                    [dim_name]_index - Single index for dimension\n
+                    [dim_name]_selection - Array of selected indices for
+                     dimension\n
+                    ```\n
+                    Note that the cap generator may substitute among
+                    standard names in this category in order to
+                    properly call suite parts and individual
+                    schemes. In the substitutions below, the name on
+                    the left is the standard_name in the dimensions
+                    field of the caller while the name(s) on the right
+                    is (are) the standard name(s) of the callee (in
+                    the form used in the subroutine call).\n
+                    ```\n
+                    [dim_name]_dimension ==> 1:[dim_name]_loop_extent\n
+                    [dim_name]_loop_extent ==> 1:[dim_name]_loop_extent\n
+                    [dim_name]_begin:[dim_name]_end ==> 1:[dim_name]_loop_extent\n
+                    [dim_name]_begin:[dim_name]_end ==> 1:[dim_name]_dimension\n
+                    ```\n
+                    Also note that horizontal_dimension should be used in
+                    xxx_[timestep_]init and xxx_[timestep_]final routines
+                    but not in xxx_run routines.\n
+                    Currently, the only dimension which supports all
+                    six dimension types is horizontal_dimension. This and
+                    other supported dimension standard names are
+                    listed below.\n">
+    <standard_name name="horizontal_dimension"
+                   long_name="Size horizontal dimension">
+      <type units="count">integer</type>
+    </standard_name>
+    <standard_name name="vertical_layer_dimension"
+                   long_name="number of vertical levels">
+      <type units="count">integer</type>
+    </standard_name>
+    <standard_name name="vertical_interface_dimension"
+                   long_name="number of vertical interfaces">
+      <type units="count">integer</type>
+    </standard_name>
+    <standard_name name="vertical_layer_index"
+                   long_name="index of a particular vertical level">
+      <type units="count">integer</type>
+    </standard_name>
+    <standard_name name="vertical_interface_index"
+                   long_name="index of a particular vertical interface">
+      <type units="count">integer</type>
+    </standard_name>
+    <standard_name name="index_of_bottom_vertical_layer">
+      <type units="index">integer</type>
+    </standard_name>
+    <standard_name name="index_of_top_vertical_layer">
+      <type units="index">integer</type>
+    </standard_name>
+    <standard_name name="index_of_bottom_vertical_interface">
+      <type units="index">integer</type>
+    </standard_name>
+    <standard_name name="index_of_top_vertical_interface">
+      <type units="index">integer</type>
+    </standard_name>
+    <standard_name name="thread_block_dimension"
+                   long_name="Total number of thread blocks which the host model may use to call CCPP physics run groups during the CCPP run phase.">
+      <type units="none">integer</type>
+    </standard_name>
+    <standard_name name="thread_block_index"
+                   long_name="Number of current thread block. This variable may only be used during CCPP run phase">
+      <type units="none">integer</type>
+    </standard_name>
+  </section>
+  <section name="constants">
+    <standard_name name="avogadro_number">
+      <type kind="kind_phys" units="molecules mole-1">real</type>
+    </standard_name>
+    <standard_name name="base_state_surface_pressure_for_hybrid_vertical_coordinate">
+      <type kind="kind_phys" units="Pa">real</type>
+    </standard_name>
+    <standard_name name="boltzmann_constant">
+      <type kind="kind_phys" units="J K-1">real</type>
+    </standard_name>
+    <standard_name name="gas_constant_of_dry_air">
+      <type kind="kind_phys" units="J kg-1 K-1">real</type>
+    </standard_name>
+    <standard_name name="seconds_in_calendar_day">
+      <type kind="kind_phys" units="s">integer</type>
+    </standard_name>
+    <standard_name name="specific_heat_of_dry_air_at_constant_pressure">
+      <type kind="kind_phys" units="J kg-1 K-1">real</type>
+    </standard_name>
+    <standard_name name="specific_heat_of_liquid_water_at_20c" 
+              long_name="specific heat of liquid water at 20C">
+      <type kind="kind_phys" units="J kg-1 K-1">real</type>
+    </standard_name>
+    <standard_name name="latent_heat_of_vaporization_of_water_at_0c"
+                   long_name="latent heat of vaporization of water at 0C">
+      <type kind="kind_phys" units="J kg-1">real</type>
+    </standard_name>
+    <standard_name name="density_of_dry_air_at_stp" 
+              long_name="density of dry air at STP">
+      <type kind="kind_phys" units="kg m-3">real</type>
+    </standard_name>
+    <standard_name name="density_of_liquid_water_at_0c"
+                   long_name="density of liquid water at 0C">
+      <type kind="kind_phys" units="kg m-3">real</type>
+    </standard_name>
+    <standard_name
+        name="ratio_of_water_vapor_to_dry_air_gas_constants_minus_one"
+        long_name="(Rwv / Rdair) - 1.0">
+      <type kind="kind_phys" units="1">real</type>
+    </standard_name>
+  </section>
+  <section name="coordinates">
+    <standard_name name="latitude">
+      <type kind="kind_phys" units="radians">real</type>
+    </standard_name>
+    <standard_name name="longitude">
+      <type kind="kind_phys" units="radians">real</type>
+    </standard_name>
+    <standard_name name="gravitational_acceleration">
+      <type kind="kind_phys" units="m s-2">real</type>
+    </standard_name>
+    <standard_name name="cell_area">
+      <type kind="kind_phys" units="steradian">real</type>
+    </standard_name>
+    <standard_name name="cell_weight">
+      <type kind="kind_phys" units="none">real</type>
+    </standard_name>
+  </section>
+  <section name="state_variables"
+           comment="Note that appending '_on_previous_timestep' to standard_names in this section yields another valid standard_name">
+    <standard_name name="physics_state_due_to_dynamics">
+      <type kind="kind_phys" units="none">physics_state</type>
+    </standard_name>
+    <standard_name name="timestep_for_physics">
+      <type kind="kind_phys" units="s">integer</type>
+    </standard_name>
+    <standard_name name="total_tendency_of_physics">
+      <type kind="kind_phys" units="none">physics_tend</type>
+    </standard_name>
+    <standard_name name="air_pressure_at_top_of_atmosphere_model">
+      <type kind="kind_phys" units="Pa">real</type>
+    </standard_name>
+    <standard_name name="air_pressure_at_sea_level">
+      <type kind="kind_phys" units="Pa">real</type>
+    </standard_name>
+    <standard_name name="surface_air_pressure">
+      <type kind="kind_phys" units="Pa">real</type>
+    </standard_name>
+    <standard_name name="surface_pressure_of_dry_air">
+      <type kind="kind_phys" units="Pa">real</type>
+    </standard_name>
+    <standard_name name="geopotential_at_surface">
+      <type kind="kind_phys" units="m2 s-2">real</type>
+    </standard_name>
+    <standard_name name="air_temperature">
+      <type kind="kind_phys" units="K">real</type>
+    </standard_name>
+    <standard_name name="air_temperature_on_previous_timestep">
+      <type kind="kind_phys" units="K">real</type>
+    </standard_name>
+    <standard_name name="x_wind"
+                   long_name="Horizontal wind in a direction perdendicular to y_wind">
+      <type kind="kind_phys" units="m s-1">real</type>
+    </standard_name>
+    <standard_name name="y_wind"
+                   long_name="Horizontal wind in a direction perdendicular to x_wind">
+      <type kind="kind_phys" units="m s-1">real</type>
+    </standard_name>
+    <standard_name name="dry_static_energy"
+                   long_name="Dry static energy Content of Atmosphere Layer">
+      <type kind="kind_phys" units="J kg-1">real</type>
+    </standard_name>
+    <standard_name name="lagrangian_vertical_coordinate"
+                   long_name="flag indicating if vertical coordinate is lagrangian">
+      <type kind="" units="flag">logical</type>
+    </standard_name>
+    <standard_name name="lagrangian_tendency_of_air_pressure"
+                   long_name="Vertical pressure velocity">
+      <type kind="kind_phys" units="Pa s-1">real</type>
+    </standard_name>
+    <standard_name name="air_pressure"
+                   long_name="Midpoint air pressure">
+      <type kind="kind_phys" units="Pa">real</type>
+    </standard_name>
+    <standard_name name="air_pressure_of_dry_air"
+                   long_name="Dry midpoint pressure">
+      <type kind="kind_phys" units="Pa">real</type>
+    </standard_name>
+    <standard_name name="pressure_thickness">
+      <type kind="kind_phys" units="Pa">real</type>
+    </standard_name>
+    <standard_name name="pressure_thickness_of_dry_air">
+      <type kind="kind_phys" units="Pa">real</type>
+    </standard_name>
+    <standard_name name="reciprocal_of_pressure_thickness">
+      <type kind="kind_phys" units="Pa-1">real</type>
+    </standard_name>
+    <standard_name name="reciprocal_of_pressure_thickness_of_dry_air">
+      <type kind="kind_phys" units="Pa-1">real</type>
+    </standard_name>
+    <standard_name name="ln_of_air_pressure">
+      <type kind="kind_phys" units="1">real</type>
+    </standard_name>
+    <standard_name name="log_of_air_pressure_of_dry_air">
+      <type kind="kind_phys" units="Pa">real</type>
+    </standard_name>
+    <standard_name name="inverse_exner_function_wrt_surface_pressure"
+                   long_name="inverse exner function w.r.t. surface pressure, (ps/p)^(R/cp)">
+      <type kind="kind_phys" units="1">real</type>
+    </standard_name>
+    <standard_name name="geopotential_height">
+      <type kind="kind_phys" units="m">real</type>
+    </standard_name>
+    <standard_name name="constituent_mixing_ratio">
+      <type kind="kind_phys" units="kg/kg moist or dry air depending on type">real</type>
+    </standard_name>
+    <standard_name name="air_pressure_at_interface">
+      <type kind="kind_phys" units="Pa">real</type>
+    </standard_name>
+    <standard_name name="air_pressure_of_dry_air_at_interface">
+      <type kind="kind_phys" units="Pa">real</type>
+    </standard_name>
+    <standard_name name="ln_of_air_pressure_at_interface">
+      <type kind="kind_phys" units="1">real</type>
+    </standard_name>
+    <standard_name name="ln_of_air_pressure_of_dry_air_at_interface">
+      <type kind="kind_phys" units="1">real</type>
+    </standard_name>
+    <standard_name name="largest_model_top_pressure_that_allows_molecular_diffusion">
+      <type kind="kind_phys" units="Pa">real</type>
+    </standard_name>
+    <standard_name name="flag_for_molecular_diffusion">
+      <type kind="kind_phys" units="flag">logical</type>
+    </standard_name>
+    <standard_name name="flag_for_physics_grid_initialization" 
+              long_name="Flag to indicate if physics grid is initialized">
+      <type kind="kind_phys" units="flag">logical</type>
+    </standard_name>
+    <standard_name name="geopotential_height_at_interface">
+      <type kind="kind_phys" units="m">real</type>
+    </standard_name>
+    <standard_name name="column_integrated_total_kinetic_and_static_energy_of_initial_state">
+      <type kind="kind_phys" units="J m-2">real</type>
+    </standard_name>
+    <standard_name name="column_integrated_total_kinetic_and_static_energy_of_current_state">
+      <type kind="kind_phys" units="J m-2">real</type>
+    </standard_name>
+    <standard_name name="column_integrated_total_water_of_initial_state">
+      <type kind="kind_phys" units="kg m-2">real</type>
+    </standard_name>
+    <standard_name name="column_integrated_total_water_of_current_state">
+      <type kind="kind_phys" units="kg m-2">real</type>
+    </standard_name>
+    <standard_name name="tendency_of_temperature"
+                   long_name="Change in temperature from a parameterization">
+      <type kind="kind_phys" units="K s-1">real</type>
+    </standard_name>
+    <standard_name name="total_tendency_of_air_temperature"
+                   long_name="Total change in temperature from a
+                              physics suite">
+      <type kind="kind_phys" units="K s-1">real</type>
+    </standard_name>
+    <standard_name name="tendency_of_potential_temperature"
+                   long_name="Change in potential temperature from a parameterization">
+      <type kind="kind_phys" units="K s-1">real</type>
+    </standard_name>
+    <standard_name name="total_tendency_of_potential_temperature">
+      <type kind="kind_phys" units="K s-1">real</type>
+    </standard_name>
+    <standard_name name="tendency_of_x_wind"
+                   long_name="Change in x wind from a parameterization">
+      <type kind="kind_phys" units="m s-2">real</type>
+    </standard_name>
+    <standard_name name="total_tendency_of_x_wind">
+      <type kind="kind_phys" units="m s-2">real</type>
+    </standard_name>
+    <standard_name name="tendency_of_y_wind"
+                   long_name="Change in y wind from a parameterization">
+      <type kind="kind_phys" units="m s-2">real</type>
+    </standard_name>
+    <standard_name name="total_tendency_of_y_wind">
+      <type kind="kind_phys" units="m s-2">real</type>
+    </standard_name>
+    <standard_name name="surface_energy_flux">
+      <type kind="kind_phys" units="W m-2">real</type>
+    </standard_name>
+    <standard_name name="cumulative_boundary_flux_of_total_energy">
+      <type kind="kind_phys" units="W m-2">real</type>
+    </standard_name>
+    <standard_name name="cumulative_boundary_flux_of_total_water">
+      <type kind="kind_phys" units="W m-2">real</type>
+    </standard_name>
+    <standard_name name="reference_pressure"
+                   long_name="reference pressure ">
+      <type kind="kind_phys" units="Pa">real</type>
+    </standard_name>
+    <standard_name name="us_standard_atmospheric_pressure_at_sea_level"
+                   long_name="US Standard Atmospheric pressure at sea level">
+      <type kind="kind_phys" units="Pa">real</type>
+    </standard_name>
+    <standard_name name="reference_pressure_at_surface"
+                   long_name="reference pressure at surface">
+      <type kind="kind_phys" units="Pa">real</type>
+    </standard_name>
+    <standard_name name="reference_pressure_normalized_by_surface_pressure"
+                   long_name="reference pressure normalized by surface pressure">
+      <type kind="kind_phys" units="1">real</type>
+    </standard_name>
+    <standard_name name="exner_function"
+                   long_name="exner function">
+      <type kind="kind_phys" units="1">real</type>
+    </standard_name>
+    <standard_name name="potential_temperature"
+                   long_name="potential temperature">
+      <type kind="kind_phys" units="K">real</type>
+    </standard_name>
+    <standard_name name="potential_temperature_on_previous_timestep"
+                   long_name="potential temperature on previous timestep">
+      <type kind="kind_phys" units="K">real</type>
+    </standard_name>
+    <standard_name name="pressure_dependent_gas_constant_of_dry_air">
+      <type kind="kind_phys" units="J kg-1 K-1">real</type>
+    </standard_name>
+    <standard_name
+        name="pressure_dependent_ratio_of_dry_air_to_water_vapor_gas_constants_minus_one"
+        long_name="(Rwv / Rdair) - 1.0">
+      <type kind="kind_phys" units="1">real</type>
+    </standard_name>
+  </section>
+  <section name="diagnostics">
+    <standard_name name="total_precipitation_rate_at_surface">
+      <type kind="kind_phys" units="m s-1">real</type>
+    </standard_name>
+  </section>
+  <section name="constituents">
+    <standard_name name="number_of_chemical_species">
+      <type kind="kind_phys" units="count">integer</type>
+    </standard_name>
+    <standard_name name="number_of_tracers">
+      <type kind="kind_phys" units="count">integer</type>
+    </standard_name>
+    <standard_name name="water_vapor_specific_humidity">
+      <type kind="kind_phys" units="kg kg-1">real</type>
+    </standard_name>
+    <standard_name name="mole_fraction_of_water_vapor">
+      <type kind="kind_phys" units="mole mole-1">real</type>
+    </standard_name>
+    <standard_name name="cloud_liquid_water_mixing_ratio_of_moist_air">
+                   long_name="Ratio of the mass of liquid water to the mass of moist air">
+      <type kind="kind_phys" units="kg kg-1">real</type>
+    </standard_name>
+    <standard_name name="cloud_liquid_water_mixing_ratio">
+                   long_name="Ratio of the mass of liquid water to the mass of dry air">
+      <type kind="kind_phys" units="kg kg-1">real</type>
+    </standard_name>
+    <standard_name name="cloud_ice_mixing_ratio"
+                   long_name="Ratio of the mass of ice to the mass of dry air">
+      <type kind="kind_phys" units="kg kg-1">real</type>
+    </standard_name>
+    <standard_name name="rain_water_mixing_ratio">
+      <type kind="kind_phys" units="kg kg-1">real</type>
+    </standard_name>
+    <standard_name name="volume_mixing_ratio_ch4"
+                   long_name="CH4 volume mixing ratio">
+      <type kind="kind_phys" units="kg kg-1">real</type>
+    </standard_name>
+    <standard_name name="volume_mixing_ratio_co"
+                   long_name="CO volume mixing ratio">
+      <type kind="kind_phys" units="kg kg-1">real</type>
+    </standard_name>
+    <standard_name name="volume_mixing_ratio_co2"
+                   long_name="CO2 volume mixing ratio">
+      <type kind="kind_phys" units="kg kg-1">real</type>
+    </standard_name>
+    <standard_name name="volume_mixing_ratio_ccl4"
+                   long_name="CCL4 volume mixing ratio">
+      <type kind="kind_phys" units="kg kg-1">real</type>
+    </standard_name>
+    <standard_name name="volume_mixing_ratio_cfc11"
+                   long_name="CFC11 volume mixing ratio">
+      <type kind="kind_phys" units="kg kg-1">real</type>
+    </standard_name>
+    <standard_name name="volume_mixing_ratio_cfc12"
+                   long_name="CFC12 volume mixing ratio">
+      <type kind="kind_phys" units="kg kg-1">real</type>
+    </standard_name>
+    <standard_name name="volume_mixing_ratio_cfc113"
+                   long_name="CFC113 volume mixing ratio">
+      <type kind="kind_phys" units="kg kg-1">real</type>
+    </standard_name>
+    <standard_name name="volume_mixing_ratio_cfc22"
+                   long_name="CFC22 volume mixing ratio">
+      <type kind="kind_phys" units="kg kg-1">real</type>
+    </standard_name>
+    <standard_name name="volume_mixing_ratio_o2"
+                   long_name="O2 volume mixing ratio">
+      <type kind="kind_phys" units="kg kg-1">real</type>
+    </standard_name>
+    <standard_name name="volume_mixing_ratio_n2o"
+                   long_name="N2O volume mixing ratio">
+      <type kind="kind_phys" units="kg kg-1">real</type>
+    </standard_name>
+  </section>
+  <section name="standard_variables"
+           comment="Standard / required CCPP variables">
+    <standard_name name="ccpp_error_message"
+                   long_name="Error message for error handling in CCPP">
+      <type kind="len=512" units="1">character</type>
+    </standard_name>
+    <standard_name name="ccpp_error_flag"
+                   long_name="Error flag for error handling in CCPP">
+      <type kind="" units="flag">integer</type>
+    </standard_name>
+  </section>
+</standard_names>
