@@ -234,8 +234,8 @@ Suffixes
 
 | **on_radiation_timestep**
 | **on_previous_timestep**
-| ``N``**_timesteps_back**
-| **word**``N``**word**
+| ``N`` **_timesteps_back**
+| **word** ``N`` **word**
 | test
 | `test`
 | ``test``
