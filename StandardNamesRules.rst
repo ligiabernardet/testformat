@@ -273,13 +273,13 @@ Prefixes and Suffixes
 | **for_current_cubed_sphere_tile**
 | **plus_one**
 | **minus_one**
-| **one_way_coupling_of_** ``X`` **_to_** ``Y``
+| **one_way_coupling_of** ``_X`` **_to** ``_Y``
 | **for_radiation**
 | **for_deep_convection**
 | **for_microphysics**
 | **directory for** ``X`` **_source_code**
-| **flag_for_reading_** ``X`` **_from_input**
-| **tunable_parameter[s]_for_** ``X``
+| **flag_for_reading** ``_X`` **_from_input**
+| **tunable_parameter[s]_for** ``_X``
 | **map_of**
 
 Transformations
@@ -287,30 +287,30 @@ Transformations
 
 Prefixes
 ^^^^^^^^
-| change_over_time_in_ ``X``
-| [horizontal_]convergence_of_ ``X``
-| correlation_of_ ``X`` _and_``Y`` [_over_ ``Z``]
-| covariance_of_ ``X`` _and_ ``Y`` [_over_ ``Z``]
-| component_derivative_of_ ``X``
-| derivative_of_ ``X`` _wrt_ ``Y``
-| direction_of_ ``X``
-| [horizontal_]divergence_of_ ``X``
-| histogram_of_``X`` [_over_ ``Z``]
-| integral_of_ ``Y`` _wrt_ ``X``
-| ln_ ``X``
-| log10_``X``
-| magnitude_of_ ``X``
-| probability_distribution_of_ ``X`` [_over_ ``Z``]
-| probability_density_function_of_ ``X``[_over_ ``Z``]
-| product_of_`` X`` _and_ ``Y``
-| ratio_of_ ``X`` _to_`` Y``
-| square_of_ ``X``
-| tendency_of_ ``X``
-| **standard_deviation_of_** ``X``
-| **reciprocal_of_** ``X``
+| change_over_time_in ``_X``
+| [horizontal_]convergence_of ``_X``
+| correlation_of ``_X`` _and ``_Y`` [_over ``_Z``]
+| covariance_of ``_X`` _and ``_Y`` [_over ``_Z``]
+| component_derivative_of ``_X``
+| derivative_of ``_X`` _wrt ``_Y``
+| direction_of ``_X``
+| [horizontal_]divergence_of ``_X``
+| histogram_of ``_X`` [_over ``_Z``]
+| integral_of ``_Y`` _wrt ``_X``
+| ln ``_X``
+| log10 ``_X``
+| magnitude_of ``_X``
+| probability_distribution_of ``_X`` [_over ``_Z``]
+| probability_density_function_of ``_X``[_over ``_Z``]
+| product_of ``_X`` _and ``_Y``
+| ratio_of ``_X`` _to ``_Y``
+| square_of ``_X``
+| tendency_of ``_X``
+| **standard_deviation_of** ``_X``
+| **reciprocal_of** ``_X``
 | **cosine_of ``_X``
-| **sine_of_ ``X``
-| **variance_of_ ``X``
+| **sine_of ``_X``
+| **variance_of ``_X``
 
 Other common standard name components
 =====================================
