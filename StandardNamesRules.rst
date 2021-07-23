@@ -44,7 +44,7 @@ CCPP Standard Name Rules
    [``surface``] [``component``] standard_name [*at* ``surface``] [*in* ``medium``]
    [*due_to* ``process``] [*assuming* ``condition``]
 
-   See the list of currently-used :ref:`qualifications <qualifiers>` for help.
+   See the list of currently-used qualifiers below for help.
 
 #. Variables are current and instantaneous unless specified. Variables that are not
    current (e.g., previous timestep) or non-instantaneous (e.g., accumulated values)
@@ -63,12 +63,11 @@ CCPP Standard Name Rules
    already exists and cannot be reused.
 
 #. Spell out acronyms unless they are obvious to a vast majority of
-   scientists/developers who may come across them. Here is a
-   :ref:`list of currently-used aliases <Aliases>` where either is
-   acceptable.
+   scientists/developers who may come across them. A
+   list of currently-used aliases is below.
 
 #. For control-oriented variables, if the variable is a Fortran logical,
-   use flag_for_X. If it is any other data type, use control_for_X.All flags
+   use flag_for ``_X``. If it is any other data type, use control_for ``_X``. All flags
    should be Fortran logicals.
 
 #. No punctuation should appear in standard names except for underscores (_).
