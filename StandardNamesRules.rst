@@ -57,7 +57,7 @@ CCPP Standard Name Rules
    use at_interface.
 
 #. If possible, qualifiers should be limited in order to allow for a wide
-   applicability of the variable. In other words, don't qualify with _for_xyz
+   applicability of the variable. In other words, don't qualify with _for ``_xyz``
    unless a variable could not conceivably be used outside of the more
    narrowly-defined context or a variable without the scope-narrowing qualifiers
    already exists and cannot be reused.
