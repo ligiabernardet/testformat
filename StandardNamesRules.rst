@@ -276,7 +276,7 @@ Prefixes and Suffixes
 | **for_radiation**
 | **for_deep_convection**
 | **for_microphysics**
-| **directory_for** ``X`` **_source_code**
+| **directory_for** ``_X`` **_source_code**
 | **flag_for_reading** ``_X`` **_from_input**
 | **tunable_parameter[s]_for** ``_X``
 | **map_of**
