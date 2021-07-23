@@ -240,14 +240,13 @@ Suffixes
 Computational
 -------------
 
-Prefixes and Suffixes
-^^^^^^^^^^^^^^^^^^^^^
+Prefixes
+^^^^^^^^
 
 | **for_coupling**
 | **for_chemistry_coupling**
 | **from_coupled_process**
 | **from_wave_model**
-| **collection_array**
 | **lower_bound_of**
 | **upper_bound_of**
 | **unfiltered**
@@ -260,7 +259,6 @@ Prefixes and Suffixes
 | **vertical_dimension_of**
 | **volumetric**
 | **cumulative**
-| **multiplied_by_timestep**
 | **iounit_of**
 | **filename_of**
 | **frequency_of**
@@ -268,18 +266,24 @@ Prefixes and Suffixes
 | **XYZ_dimensioned**
 | **tendency_of** ``X``
 | **generic_tendency**
+| **one_way_coupling_of** ``_X`` **_to** ``_Y``
+| **tunable_parameter[s]_for** ``_X``
+| **map_of**
+
+Suffixes
+^^^^^^^^
+
+| **collection_array**
+| **multiplied_by_timestep**
 | **for_current_mpi_rank**
 | **for_current_cubed_sphere_tile**
 | **plus_one**
 | **minus_one**
-| **one_way_coupling_of** ``_X`` **_to** ``_Y``
 | **for_radiation**
 | **for_deep_convection**
 | **for_microphysics**
 | **directory_for** ``_X`` **_source_code**
 | **flag_for_reading** ``_X`` **_from_input**
-| **tunable_parameter[s]_for** ``_X``
-| **map_of**
 
 Transformations
 ---------------
