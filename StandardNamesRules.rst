@@ -288,13 +288,13 @@ Transformations
 Prefixes
 ^^^^^^^^
 | change_over_time_in ``_X``
-| [horizontal_]convergence_of ``_X``
+| convergence_of ``_X`` or horizontal_convergence_of ``_X``
 | correlation_of ``_X`` _and ``_Y`` [_over ``_Z``]
 | covariance_of ``_X`` _and ``_Y`` [_over ``_Z``]
 | component_derivative_of ``_X``
 | derivative_of ``_X`` _wrt ``_Y``
 | direction_of ``_X``
-| [horizontal_]divergence_of ``_X``
+| divergence_of ``_X`` or horizontal_divergence_of ``_X``
 | histogram_of ``_X`` [_over ``_Z``]
 | integral_of ``_Y`` _wrt ``_X``
 | ln ``_X``
@@ -308,9 +308,9 @@ Prefixes
 | tendency_of ``_X``
 | **standard_deviation_of** ``_X``
 | **reciprocal_of** ``_X``
-| **cosine_of ``_X``
-| **sine_of ``_X``
-| **variance_of ``_X``
+| **cosine_of** ``_X``
+| **sine_of** ``_X``
+| **variance_of** ``_X``
 
 Other common standard name components
 =====================================
