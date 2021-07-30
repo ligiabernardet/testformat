@@ -56,6 +56,15 @@ CCPP Standard Name Rules
    representing quantities at the interface between grid cells vertically,
    use at_interface.
 
+#. By default, _mixing_ratio_ refers to mass mixing ratios. Volume mixing ratios should be
+   qualified as _volume_mixing_ratio_. Mass mixing ratios should contain information regarding 
+   with respect to what quantity they are defined, and options are _wrt_dry_air_, _wrt_moist_air_, 
+   or _wrt_total_mass_, where _moist_air_ refers to dry air plus vapor and _total_mass_ refers
+   to dry air plus vapor and hydrometeors. A special case exists in the case of mixing ratio 
+   of vapor: the standard name _specific_humidity_ should be used instead of 
+   _mixing_ratio_of_vapor_wrt_moist_air_. When referring to soil quantities, 
+   _volume_fraction_ should be used to express the volumetric soil moisture.
+
 #. If possible, qualifiers should be limited in order to allow for a wide
    applicability of the variable. In other words, don't qualify with _for ``_xyz``
    unless a variable could not conceivably be used outside of the more
@@ -243,10 +252,6 @@ Computational
 Prefixes
 ^^^^^^^^
 
-| **for_coupling**
-| **for_chemistry_coupling**
-| **from_coupled_process**
-| **from_wave_model**
 | **lower_bound_of**
 | **upper_bound_of**
 | **unfiltered**
@@ -270,9 +275,20 @@ Prefixes
 | **tunable_parameter[s]_for** ``_X``
 | **map_of**
 
+
+Infixes
+^^^^^^^
+
+| **directory_for** ``_X`` **_source_code**
+| **flag_for_reading** ``_X`` **_from_input**
+
 Suffixes
 ^^^^^^^^
 
+| **for_coupling**
+| **for_chemistry_coupling**
+| **from_coupled_process**
+| **from_wave_model**
 | **collection_array**
 | **multiplied_by_timestep**
 | **for_current_mpi_rank**
@@ -282,8 +298,6 @@ Suffixes
 | **for_radiation**
 | **for_deep_convection**
 | **for_microphysics**
-| **directory_for** ``_X`` **_source_code**
-| **flag_for_reading** ``_X`` **_from_input**
 
 Transformations
 ---------------
@@ -304,7 +318,7 @@ Prefixes
 | log10 ``_X``
 | magnitude_of ``_X``
 | probability_distribution_of ``_X`` [_over ``_Z``]
-| probability_density_function_of ``_X``[_over ``_Z``]
+| probability_density_function_of ``_X`` [_over ``_Z``]
 | product_of ``_X`` _and ``_Y``
 | ratio_of ``_X`` _to ``_Y``
 | square_of ``_X``
@@ -433,7 +447,7 @@ standard names.
 +-------------------------------------------+-----------------+
 | mass_fraction                             | 1               |
 +-------------------------------------------+-----------------+
-| mass_mixing_ratio                         | 1               |
+| mixing_ratio                              | kg kg-1         |
 +-------------------------------------------+-----------------+
 | mass_transport k                          | g s-1           |
 +-------------------------------------------+-----------------+
@@ -472,6 +486,8 @@ standard names.
 | volume_flux                               | m s-1           |
 +-------------------------------------------+-----------------+
 | volume_fraction                           | 1               |
++-------------------------------------------+-----------------+
+| volume_mixing_ratio                       | mol mol-1       |
 +-------------------------------------------+-----------------+
 | volume_transport                          | m3 s-1          |
 +-------------------------------------------+-----------------+
