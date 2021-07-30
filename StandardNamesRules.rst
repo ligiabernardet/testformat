@@ -57,13 +57,13 @@ CCPP Standard Name Rules
    use at_interface.
 
 #. By default, *mixing_ratio* refers to mass mixing ratios. Volume mixing ratios should be
-   qualified as _volume_mixing_ratio_. Mass mixing ratios should contain information regarding 
-   with respect to what quantity they are defined, and options are _wrt_dry_air_, _wrt_moist_air_, 
-   or _wrt_total_mass_, where _moist_air_ refers to dry air plus vapor and _total_mass_ refers
-   to dry air plus vapor and hydrometeors. A special case exists in the case of mixing ratio 
-   of vapor: the standard name _specific_humidity_ should be used instead of 
-   _mixing_ratio_of_vapor_wrt_moist_air_. When referring to soil quantities, 
-   _volume_fraction_ should be used to express the volumetric soil moisture.
+   qualified as *volume_mixing_ratio*. Mass mixing ratios should contain information regarding
+   with respect to what quantity they are defined, and options are *wrt_dry_air*, *wrt_moist_air*,
+   or *wrt_total_mass*, where *moist_air* refers to dry air plus vapor and *total_mass* refers
+   to dry air plus vapor and hydrometeors. A special case exists in the case of mixing ratio
+   of vapor: the standard name *specific_humidity* should be used instead of
+   *mixing_ratio_of_vapor_wrt_moist_air*. When referring to soil quantities,
+   *volume_fraction* should be used to express the volumetric soil moisture.
 
 #. If possible, qualifiers should be limited in order to allow for a wide
    applicability of the variable. In other words, don't qualify with _for ``_xyz``
