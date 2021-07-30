@@ -56,7 +56,7 @@ CCPP Standard Name Rules
    representing quantities at the interface between grid cells vertically,
    use at_interface.
 
-#. By default, _mixing_ratio_ refers to mass mixing ratios. Volume mixing ratios should be
+#. By default, *mixing_ratio* refers to mass mixing ratios. Volume mixing ratios should be
    qualified as _volume_mixing_ratio_. Mass mixing ratios should contain information regarding 
    with respect to what quantity they are defined, and options are _wrt_dry_air_, _wrt_moist_air_, 
    or _wrt_total_mass_, where _moist_air_ refers to dry air plus vapor and _total_mass_ refers
